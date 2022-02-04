@@ -1,8 +1,8 @@
-﻿# Messages for web (on Windows) 
+﻿# Simplifi (on Windows) 
 
 Runs Simplifi inside of a native Windows application.
 
-Keeps Messages for web running in the system tray. To show the window, press **Ctrl+Win+S** or right-click the icon and click "Show".
+Keeps Simplifi running in the system tray. To show the window, press **Ctrl+Alt+I** or right-click the icon and click "Show".
 
 To start up the program to the system tray (window hidden on launch), pass the `-startup` argument.
 
