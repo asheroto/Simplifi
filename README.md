@@ -1,4 +1,6 @@
-﻿# Simplifi (on Windows) 
+﻿# Simplifi (by Quicken) on Windows
+
+![Simplifi logo](https://i.imgur.com/LfHLqcr.jpeg)
 
 Runs Simplifi inside of a native Windows application.
 
