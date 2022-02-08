@@ -50,25 +50,25 @@ Partial Class Main
         '
         Me.SystemTrayIcon.ContextMenuStrip = Me.SystemTrayIconContextMenu
         Me.SystemTrayIcon.Icon = CType(resources.GetObject("SystemTrayIcon.Icon"), System.Drawing.Icon)
-        Me.SystemTrayIcon.Text = "Messages for web"
+        Me.SystemTrayIcon.Text = "Simplifi"
         Me.SystemTrayIcon.Visible = True
         '
         'SystemTrayIconContextMenu
         '
         Me.SystemTrayIconContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.SystemTrayIconContextMenu.Name = "SystemTrayIconContextMenu"
-        Me.SystemTrayIconContextMenu.Size = New System.Drawing.Size(104, 48)
+        Me.SystemTrayIconContextMenu.Size = New System.Drawing.Size(181, 70)
         '
         'ShowToolStripMenuItem
         '
         Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
-        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ShowToolStripMenuItem.Text = "Show"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Startup

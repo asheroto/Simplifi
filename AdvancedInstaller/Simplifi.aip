@@ -15,10 +15,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Simplifi"/>
-    <ROW Property="ProductCode" Value="1033:{D1844196-52F4-429F-8248-2D41843D695B} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{6B25B84B-F639-4F3D-B0E0-0E6427A4968A} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Simplifi"/>
-    <ROW Property="ProductVersion" Value="0.0.1.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="0.0.2.0" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{A11D636A-B6C3-402D-AA70-0E57FA7259D3}"/>
@@ -66,18 +66,18 @@
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="Microsoft.Web.WebView2.Core.dll" Component_="Microsoft.Web.WebView2.Core.dll" FileName="MICROS~1.DLL|Microsoft.Web.WebView2.Core.dll" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Microsoft.Web.WebView2.Core.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.Core.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="MICROS~1.XML|Microsoft.Web.WebView2.Core.xml" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Microsoft.Web.WebView2.Core.xml" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.WinForms.dll" Component_="Microsoft.Web.WebView2.WinForms.dll" FileName="MICROS~2.DLL|Microsoft.Web.WebView2.WinForms.dll" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Microsoft.Web.WebView2.WinForms.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.WinForms.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="MICROS~2.XML|Microsoft.Web.WebView2.WinForms.xml" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Microsoft.Web.WebView2.WinForms.xml" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.Wpf.dll" Component_="Microsoft.Web.WebView2.Wpf.dll" FileName="MICROS~3.DLL|Microsoft.Web.WebView2.Wpf.dll" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Microsoft.Web.WebView2.Wpf.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Web.WebView2.Wpf.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="MICROS~3.XML|Microsoft.Web.WebView2.Wpf.xml" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Microsoft.Web.WebView2.Wpf.xml" SelfReg="false"/>
-    <ROW File="WebView2Loader.dll" Component_="WebView2Loader.dll" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\runtimes\win-arm64\native\WebView2Loader.dll" SelfReg="false"/>
-    <ROW File="WebView2Loader.dll_1" Component_="WebView2Loader.dll_1" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\runtimes\win-x64\native\WebView2Loader.dll" SelfReg="false"/>
-    <ROW File="WebView2Loader.dll_2" Component_="WebView2Loader.dll_2" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\runtimes\win-x86\native\WebView2Loader.dll" SelfReg="false"/>
-    <ROW File="Simplifi.exe" Component_="Simplifi.exe" FileName="Simplifi.exe" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Simplifi.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="Simplifi.exe.config" Component_="Microsoft.Web.WebView2.Core.xml" FileName="SIMPLI~1.CON|Simplifi.exe.config" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Simplifi.exe.config" SelfReg="false"/>
-    <ROW File="Simplifi.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="Simplifi.xml" Attributes="0" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Simplifi.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Core.dll" Component_="Microsoft.Web.WebView2.Core.dll" FileName="MICROS~1.DLL|Microsoft.Web.WebView2.Core.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Core.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="MICROS~1.XML|Microsoft.Web.WebView2.Core.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Core.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.WinForms.dll" Component_="Microsoft.Web.WebView2.WinForms.dll" FileName="MICROS~2.DLL|Microsoft.Web.WebView2.WinForms.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.WinForms.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.WinForms.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="MICROS~2.XML|Microsoft.Web.WebView2.WinForms.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.WinForms.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Wpf.dll" Component_="Microsoft.Web.WebView2.Wpf.dll" FileName="MICROS~3.DLL|Microsoft.Web.WebView2.Wpf.dll" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Web.WebView2.Wpf.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="MICROS~3.XML|Microsoft.Web.WebView2.Wpf.xml" Attributes="0" SourcePath="..\bin\Release\Microsoft.Web.WebView2.Wpf.xml" SelfReg="false"/>
+    <ROW File="WebView2Loader.dll" Component_="WebView2Loader.dll" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\bin\Release\runtimes\win-arm64\native\WebView2Loader.dll" SelfReg="false"/>
+    <ROW File="WebView2Loader.dll_1" Component_="WebView2Loader.dll_1" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\bin\Release\runtimes\win-x64\native\WebView2Loader.dll" SelfReg="false"/>
+    <ROW File="WebView2Loader.dll_2" Component_="WebView2Loader.dll_2" FileName="WEBVIE~1.DLL|WebView2Loader.dll" Attributes="0" SourcePath="..\bin\Release\runtimes\win-x86\native\WebView2Loader.dll" SelfReg="false"/>
+    <ROW File="Simplifi.exe" Component_="Simplifi.exe" FileName="Simplifi.exe" Attributes="0" SourcePath="..\bin\Release\Simplifi.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="Simplifi.exe.config" Component_="Microsoft.Web.WebView2.Core.xml" FileName="SIMPLI~1.CON|Simplifi.exe.config" Attributes="0" SourcePath="..\bin\Release\Simplifi.exe.config" SelfReg="false"/>
+    <ROW File="Simplifi.xml" Component_="Microsoft.Web.WebView2.Core.xml" FileName="Simplifi.xml" Attributes="0" SourcePath="..\bin\Release\Simplifi.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" GeneralOptions="b" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -86,7 +86,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="3" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\..\Projects\Simplifi\bin\Release\Simplifi.exe" ExtractionFolder="[AppDataFolder]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="3" PackageType="1" FilesInsideExe="true" ExeIconPath="..\bin\Release\Simplifi.exe" ExtractionFolder="[AppDataFolder]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -200,7 +200,7 @@
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="Simplifi.exe" SourcePath="..\..\..\..\Projects\Simplifi\bin\Release\Simplifi.exe" Index="0"/>
+    <ROW Name="Simplifi.exe" SourcePath="..\bin\Release\Simplifi.exe" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
