@@ -1,17 +1,32 @@
-﻿Imports Microsoft.Web.WebView2.WinForms
+﻿Imports System.ComponentModel
 Imports Microsoft.Web.WebView2.Core
-Imports System.ComponentModel
 
 Public Class Main
     Dim AllowClose As Boolean = False
-    Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs) Handles WV.NavigationCompleted
-        Text = WV.CoreWebView2.DocumentTitle
+
+    Private Sub WV_NavigationCompleted(sender As Object, e As CoreWebView2NavigationCompletedEventArgs) _
+        Handles WV.NavigationCompleted
+
+        Try
+            If Text = WV.CoreWebView2.DocumentTitle Then Exit Sub
+            Text = WV.CoreWebView2.DocumentTitle
+        Catch ex As Exception
+
+        End Try
     End Sub
 
-    Private Sub wVBrowser_CoreWebView2InitializationCompleted(sender As Object, e As CoreWebView2InitializationCompletedEventArgs) Handles WV.CoreWebView2InitializationCompleted
+    Private Sub Main_Invalidated(sender As Object, e As InvalidateEventArgs) Handles Me.Invalidated
+        'Register hotkey
+        Hotkey.registerHotkey(Me, "i", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
+    End Sub
+
+    Private Sub WV_CoreWebView2InitializationCompleted(sender As Object,
+                                                       e As CoreWebView2InitializationCompletedEventArgs) _
+        Handles WV.CoreWebView2InitializationCompleted
         AddHandler WV.CoreWebView2.NewWindowRequested, AddressOf CoreWebView2_NewWindowRequested
     End Sub
-    Private Sub CoreWebView2_NewWindowRequested(ByVal sender As Object, ByVal e As Microsoft.Web.WebView2.Core.CoreWebView2NewWindowRequestedEventArgs)
+
+    Private Sub CoreWebView2_NewWindowRequested(sender As Object, e As CoreWebView2NewWindowRequestedEventArgs)
         e.Handled = True
 
         Try
@@ -25,31 +40,25 @@ Public Class Main
         End Try
     End Sub
 
-    Sub WaitNice(ms As Long)
-        Dim x As New Stopwatch
-        x.Start()
-        Do While x.ElapsedMilliseconds <= ms
-            Application.DoEvents()
-        Loop
-        x.Stop()
-    End Sub
-
-    Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles SystemTrayIcon.MouseDoubleClick
+    Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) _
+        Handles SystemTrayIcon.MouseDoubleClick
         Show()
-        WaitNice(100)
-        Activate()
-        WaitNice(100)
-        BringToFront()
-        WaitNice(100)
         Activate()
     End Sub
 
-    Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
+    Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        If AllowClose = False Then
+            e.Cancel = True
+            Hide()
+        End If
+    End Sub
+
+    Protected Overrides Sub WndProc(ByRef m As Message)
         If m.Msg = Hotkey.WM_HOTKEY Then
             Hotkey.handleHotKeyEvent(m.WParam)
         End If
         MyBase.WndProc(m)
-    End Sub 'System wide hotkey event handling
+    End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         AllowClose = True
@@ -62,22 +71,10 @@ Public Class Main
         Activate()
     End Sub
 
-    Private Sub Main_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'Register hotkey
-        Hotkey.registerHotkey(Me, "I", Hotkey.KeyModifier.Control + Hotkey.KeyModifier.Alt)
-    End Sub
-
-    Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        If AllowClose = False Then
-            e.Cancel = True
-            Hide()
-        End If
-    End Sub
-
     Private Sub Startup_Tick(sender As Object, e As EventArgs) Handles Startup.Tick
         Startup.Enabled = False
         Dim s() As String = Environment.GetCommandLineArgs()
-        For i As Integer = 1 To s.Length - 1
+        For i = 1 To s.Length - 1
             Select Case LCase(s(i))
                 Case "-startup"
                     Close()
@@ -85,18 +82,22 @@ Public Class Main
         Next
         Opacity = 100
     End Sub
+
+    Private Sub WV_Click(sender As Object, e As EventArgs) Handles WV.Click
+    End Sub
 End Class
 
 Public Class Hotkey
 
 #Region "Declarations - WinAPI, Hotkey constant and Modifier Enum"
+
     ''' <summary>
-    ''' Declaration of winAPI function wrappers. The winAPI functions are used to register / unregister a hotkey
+    '''     Declaration of winAPI function wrappers. The winAPI functions are used to register / unregister a hotkey
     ''' </summary>
     Private Declare Function RegisterHotKey Lib "user32" _
-        (ByVal hwnd As IntPtr, ByVal id As Integer, ByVal fsModifiers As Integer, ByVal vk As Integer) As Integer
+        (hwnd As IntPtr, id As Integer, fsModifiers As Integer, vk As Integer) As Integer
 
-    Private Declare Function UnregisterHotKey Lib "user32" (ByVal hwnd As IntPtr, ByVal id As Integer) As Integer
+    Private Declare Function UnregisterHotKey Lib "user32" (hwnd As IntPtr, id As Integer) As Integer
 
     Public Const WM_HOTKEY As Integer = &H312
 
@@ -106,12 +107,15 @@ Public Class Hotkey
         Control = &H2
         Shift = &H4
         Winkey = &H8
-    End Enum 'This enum is just to make it easier to call the registerHotKey function: The modifier integer codes are replaced by a friendly "Alt","Shift" etc.
+    End Enum _
+    'This enum is just to make it easier to call the registerHotKey function: The modifier integer codes are replaced by a friendly "Alt","Shift" etc.
+
 #End Region
 
 
 #Region "Hotkey registration, unregistration and handling"
-    Public Shared Sub registerHotkey(ByRef sourceForm As Form, ByVal triggerKey As String, ByVal modifier As KeyModifier)
+
+    Public Shared Sub registerHotkey(ByRef sourceForm As Form, triggerKey As String, modifier As KeyModifier)
         Dim val As Integer
         If triggerKey = "ESC" Then
             val = Keys.Escape
@@ -120,13 +124,15 @@ Public Class Hotkey
         End If
         RegisterHotKey(sourceForm.Handle, 1, modifier, val)
     End Sub
+
     Public Shared Sub unregisterHotkeys(ByRef sourceForm As Form)
         UnregisterHotKey(sourceForm.Handle, 1)  'Remember to call unregisterHotkeys() when closing your application.
     End Sub
-    Public Shared Sub handleHotKeyEvent(ByVal hotkeyID As IntPtr)
+
+    Public Shared Sub handleHotKeyEvent(hotkeyID As IntPtr)
         Main.Show()
         Main.Activate()
     End Sub
-#End Region
 
+#End Region
 End Class

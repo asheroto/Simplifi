@@ -361,4 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/AdvancedInstaller/Simplifi-cache
 /AdvancedInstaller/Setup Files
+/AdvancedInstaller/Simplifi.back.aip
