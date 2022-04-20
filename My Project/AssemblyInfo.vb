@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Simplifi")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("asheroto")>
 <Assembly: AssemblyProduct("Simplifi")>
 <Assembly: AssemblyCopyright("Copyright © 2022")>
 <Assembly: AssemblyTrademark("")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.0.2.0")>
-<Assembly: AssemblyFileVersion("0.0.2.0")>
+<Assembly: AssemblyVersion("0.0.3.0")>
+<Assembly: AssemblyFileVersion("0.0.3.0")>
