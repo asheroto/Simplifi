@@ -60,13 +60,13 @@ Public Class Main
         MyBase.WndProc(m)
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContextMenu_Exit.Click
         AllowClose = True
         Hotkey.unregisterHotkeys(Me)
         Close()
     End Sub
 
-    Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
+    Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContextMenu_Show.Click
         Show()
         Activate()
     End Sub
@@ -84,6 +84,16 @@ Public Class Main
     End Sub
 
     Private Sub WV_Click(sender As Object, e As EventArgs) Handles WV.Click
+    End Sub
+
+    Private Sub ContextMenu_Restart_Click(sender As Object, e As EventArgs) Handles ContextMenu_Restart.Click
+        Dim p As New Process
+        p.StartInfo.FileName = "cmd"
+        p.StartInfo.Arguments = $"/C timeout /t 3 && start """" ""{Application.ExecutablePath}"""
+        p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+        p.Start()
+
+        Application.Exit()
     End Sub
 End Class
 

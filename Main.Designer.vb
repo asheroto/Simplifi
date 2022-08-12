@@ -27,10 +27,11 @@ Partial Class Main
         Me.WV = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.SystemTrayIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.SystemTrayIconContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenu_Show = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenu_Exit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Startup = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.ContextMenu_Restart = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.WV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SystemTrayIconContextMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -56,26 +57,32 @@ Partial Class Main
         '
         'SystemTrayIconContextMenu
         '
-        Me.SystemTrayIconContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.SystemTrayIconContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContextMenu_Show, Me.ContextMenu_Restart, Me.ContextMenu_Exit})
         Me.SystemTrayIconContextMenu.Name = "SystemTrayIconContextMenu"
-        Me.SystemTrayIconContextMenu.Size = New System.Drawing.Size(104, 48)
+        Me.SystemTrayIconContextMenu.Size = New System.Drawing.Size(181, 92)
         '
-        'ShowToolStripMenuItem
+        'ContextMenu_Show
         '
-        Me.ShowToolStripMenuItem.Name = "ShowToolStripMenuItem"
-        Me.ShowToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
-        Me.ShowToolStripMenuItem.Text = "Show"
+        Me.ContextMenu_Show.Name = "ContextMenu_Show"
+        Me.ContextMenu_Show.Size = New System.Drawing.Size(180, 22)
+        Me.ContextMenu_Show.Text = "Show"
         '
-        'ExitToolStripMenuItem
+        'ContextMenu_Exit
         '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
+        Me.ContextMenu_Exit.Name = "ContextMenu_Exit"
+        Me.ContextMenu_Exit.Size = New System.Drawing.Size(180, 22)
+        Me.ContextMenu_Exit.Text = "Exit"
         '
         'Startup
         '
         Me.Startup.Enabled = True
         Me.Startup.Interval = 10
+        '
+        'ContextMenu_Restart
+        '
+        Me.ContextMenu_Restart.Name = "ContextMenu_Restart"
+        Me.ContextMenu_Restart.Size = New System.Drawing.Size(180, 22)
+        Me.ContextMenu_Restart.Text = "Restart"
         '
         'Main
         '
@@ -96,8 +103,9 @@ Partial Class Main
     Friend WithEvents WV As Microsoft.Web.WebView2.WinForms.WebView2
     Friend WithEvents SystemTrayIcon As NotifyIcon
     Friend WithEvents SystemTrayIconContextMenu As ContextMenuStrip
-    Friend WithEvents ShowToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenu_Show As ToolStripMenuItem
+    Friend WithEvents ContextMenu_Exit As ToolStripMenuItem
     Friend WithEvents Startup As Timer
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents ContextMenu_Restart As ToolStripMenuItem
 End Class
