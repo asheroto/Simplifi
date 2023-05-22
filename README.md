@@ -1,4 +1,6 @@
-﻿# Simplifi (by Quicken) on Windows
+﻿[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W64WAXN)
+
+# Simplifi (by Quicken) on Windows
 
 ![Simplifi logo](https://i.imgur.com/LfHLqcr.jpeg)
 
@@ -9,7 +11,7 @@ Keeps Simplifi running in the system tray. To show the window, press **Ctrl+Alt+
 To start up the program to the system tray (window hidden on launch), pass the `-startup` argument.
 
 **Example:**
-```
+```powershell
 .\Simplifi.exe -startup
 ``` 
 
