@@ -26,18 +26,18 @@ Partial Class Main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.WV = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.SystemTrayIcon = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.SystemTrayIconContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ContextMenu_Show = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContextMenu_Restart = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenu_Exit = New System.Windows.Forms.ToolStripMenuItem()
         Me.Startup = New System.Windows.Forms.Timer(Me.components)
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.ContextMenu_Restart = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.WV, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SystemTrayIconContextMenu.SuspendLayout()
+        Me.ContextMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'WV
         '
+        Me.WV.AllowExternalDrop = True
         Me.WV.CreationProperties = Nothing
         Me.WV.DefaultBackgroundColor = System.Drawing.Color.White
         Me.WV.Dock = System.Windows.Forms.DockStyle.Fill
@@ -50,39 +50,39 @@ Partial Class Main
         '
         'SystemTrayIcon
         '
-        Me.SystemTrayIcon.ContextMenuStrip = Me.SystemTrayIconContextMenu
+        Me.SystemTrayIcon.ContextMenuStrip = Me.ContextMenu
         Me.SystemTrayIcon.Icon = CType(resources.GetObject("SystemTrayIcon.Icon"), System.Drawing.Icon)
         Me.SystemTrayIcon.Text = "Simplifi"
         Me.SystemTrayIcon.Visible = True
         '
-        'SystemTrayIconContextMenu
+        'ContextMenu
         '
-        Me.SystemTrayIconContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContextMenu_Show, Me.ContextMenu_Restart, Me.ContextMenu_Exit})
-        Me.SystemTrayIconContextMenu.Name = "SystemTrayIconContextMenu"
-        Me.SystemTrayIconContextMenu.Size = New System.Drawing.Size(181, 92)
+        Me.ContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContextMenu_Show, Me.ContextMenu_Restart, Me.ContextMenu_Exit})
+        Me.ContextMenu.Name = "SystemTrayIconContextMenu"
+        Me.ContextMenu.Size = New System.Drawing.Size(111, 70)
         '
         'ContextMenu_Show
         '
         Me.ContextMenu_Show.Name = "ContextMenu_Show"
-        Me.ContextMenu_Show.Size = New System.Drawing.Size(180, 22)
+        Me.ContextMenu_Show.Size = New System.Drawing.Size(110, 22)
         Me.ContextMenu_Show.Text = "Show"
+        '
+        'ContextMenu_Restart
+        '
+        Me.ContextMenu_Restart.Name = "ContextMenu_Restart"
+        Me.ContextMenu_Restart.Size = New System.Drawing.Size(110, 22)
+        Me.ContextMenu_Restart.Text = "Restart"
         '
         'ContextMenu_Exit
         '
         Me.ContextMenu_Exit.Name = "ContextMenu_Exit"
-        Me.ContextMenu_Exit.Size = New System.Drawing.Size(180, 22)
+        Me.ContextMenu_Exit.Size = New System.Drawing.Size(110, 22)
         Me.ContextMenu_Exit.Text = "Exit"
         '
         'Startup
         '
         Me.Startup.Enabled = True
         Me.Startup.Interval = 10
-        '
-        'ContextMenu_Restart
-        '
-        Me.ContextMenu_Restart.Name = "ContextMenu_Restart"
-        Me.ContextMenu_Restart.Size = New System.Drawing.Size(180, 22)
-        Me.ContextMenu_Restart.Text = "Restart"
         '
         'Main
         '
@@ -92,20 +92,20 @@ Partial Class Main
         Me.Controls.Add(Me.WV)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Main"
+        Me.Opacity = 0R
         Me.Text = "Simplifi"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.WV, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SystemTrayIconContextMenu.ResumeLayout(False)
+        Me.ContextMenu.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents WV As Microsoft.Web.WebView2.WinForms.WebView2
     Friend WithEvents SystemTrayIcon As NotifyIcon
-    Friend WithEvents SystemTrayIconContextMenu As ContextMenuStrip
+    Friend Shadows WithEvents ContextMenu As ContextMenuStrip
     Friend WithEvents ContextMenu_Show As ToolStripMenuItem
     Friend WithEvents ContextMenu_Exit As ToolStripMenuItem
     Friend WithEvents Startup As Timer
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents ContextMenu_Restart As ToolStripMenuItem
 End Class

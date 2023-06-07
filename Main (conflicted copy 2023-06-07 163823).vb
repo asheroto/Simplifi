@@ -42,7 +42,8 @@ Public Class Main
 
     Private Sub SystemTrayIcon_MouseDoubleClick(sender As Object, e As MouseEventArgs) _
         Handles SystemTrayIcon.MouseDoubleClick
-        DoShow()
+        Show()
+        Activate()
     End Sub
 
     Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -66,7 +67,8 @@ Public Class Main
     End Sub
 
     Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContextMenu_Show.Click
-        DoShow()
+        Show()
+        Activate()
     End Sub
 
     Private Sub Startup_Tick(sender As Object, e As EventArgs) Handles Startup.Tick
@@ -81,6 +83,9 @@ Public Class Main
         Opacity = 100
     End Sub
 
+    Private Sub WV_Click(sender As Object, e As EventArgs) Handles WV.Click
+    End Sub
+
     Private Sub ContextMenu_Restart_Click(sender As Object, e As EventArgs) Handles ContextMenu_Restart.Click
         Dim p As New Process
         p.StartInfo.FileName = "cmd"
@@ -89,14 +94,6 @@ Public Class Main
         p.Start()
 
         Application.Exit()
-    End Sub
-
-    Public Shared Sub DoShow()
-        If Main.WindowState = FormWindowState.Minimized Then
-            Main.WindowState = FormWindowState.Maximized
-        End If
-        Main.Show()
-        Main.Activate()
     End Sub
 End Class
 
@@ -143,7 +140,8 @@ Public Class Hotkey
     End Sub
 
     Public Shared Sub handleHotKeyEvent(hotkeyID As IntPtr)
-        Main.DoShow()
+        Main.Show()
+        Main.Activate()
     End Sub
 
 #End Region
