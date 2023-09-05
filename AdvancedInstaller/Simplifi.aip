@@ -19,10 +19,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="asheroto"/>
-    <ROW Property="ProductCode" Value="1033:{8C9F66D6-4EC9-4549-ADFB-246C90383716} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{A9DB8D30-BE76-4874-B7D3-0CE204AA1FA4} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Simplifi"/>
-    <ROW Property="ProductVersion" Value="1.0.3.0"/>
+    <ROW Property="ProductVersion" Value="1.0.4.0"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{85F820FF-588B-4933-8ABB-1067F965131B}"/>

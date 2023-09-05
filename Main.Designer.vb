@@ -52,7 +52,7 @@ Partial Class Main
         '
         Me.SystemTrayIcon.ContextMenuStrip = Me.ContextMenu
         Me.SystemTrayIcon.Icon = CType(resources.GetObject("SystemTrayIcon.Icon"), System.Drawing.Icon)
-        Me.SystemTrayIcon.Text = "Simplifi"
+        Me.SystemTrayIcon.Text = "Simplifi (Press Ctrl+Alt+I to show)"
         Me.SystemTrayIcon.Visible = True
         '
         'ContextMenu
